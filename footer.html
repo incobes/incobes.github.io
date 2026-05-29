@@ -1,0 +1,25 @@
+<footer id="site-footer">
+  <div class="container footer-inner" style="padding-block: 2.5rem;">
+    
+    <div style="text-align:center; margin-bottom: 2rem;">
+      <img src="img/incobesB.png" alt="Logo INCOBES" style="height: 70px; width: auto; display: block; margin: 0 auto 1rem auto;">
+      <p data-i18n="footer_desc" style="max-width: 500px; margin: 0 auto; color: rgba(255,255,255,.7);"></p>
+      
+      <div style="margin-top: 1.5rem;">
+        <span style="color: var(--teal); font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s;" onclick="copyEmail('contacto@incobes.org')" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='var(--teal)'" title="Copiar correo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contacto@incobes.org
+        </span>
+      </div>
+    </div>
+
+    <ul id="footer-links" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; list-style: none; padding: 0; margin-bottom: 2rem;"></ul>
+
+    <div style="border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.5rem; text-align: center; font-size: .8rem; color: rgba(255,255,255,.5);">
+      © <span id="year"></span> INCOBES. <span data-i18n="footer_copy"></span>
+    </div>
+
+  </div>
+</footer>
+
+<div id="toast-notification" class="toast">Copied</div>

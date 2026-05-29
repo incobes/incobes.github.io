@@ -1,0 +1,41 @@
+<div class="social-box">
+  <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+    <img src="img/facebook.png" alt="Facebook" style="width: 20px; height: 20px; object-fit: contain;">
+  </a>
+  <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+    <img src="img/x.png" alt="Twitter" style="width: 20px; height: 20px; object-fit: contain;">
+  </a>
+  <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+    <img src="img/linkedin.png" alt="LinkedIn" style="width: 20px; height: 20px; object-fit: contain;">
+  </a>
+
+  <a href="javascript:void(0);" aria-label="Email" onclick="copyEmail('contacto@incobes.org')" style="cursor: pointer; margin-top: 5px;">
+    <img src="img/correo.png" alt="Email" style="width: 20px; height: 20px; object-fit: contain;">
+  </a>
+</div>
+
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      
+      <a href="index.html" class="header-logo">
+        <img src="img/incobesB.png" alt="Logo INCOBES">
+      </a>
+
+      <nav class="site-nav" id="nav-links"></nav>
+
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <button class="lang-btn" id="lang-toggle" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 4px 10px; border-radius: 8px; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: background 0.2s, border-color 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'; this.style.borderColor='rgba(255,255,255,0.6)';" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.3)';">
+          <img id="flag-icon" src="img/mx.jpg" alt="Idioma" style="width: 24px; height: auto; border-radius: 3px;">
+          <span class="lang-text" style="color: white; font-weight: bold; font-size: 0.9rem;">ES</span>
+        </button>
+        
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav"></nav>
+  </div>
+</header>
