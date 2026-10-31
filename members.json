@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Dr. Julio César Llamas Alonso",
+    "aff": "Profesor-investigador de tiempo completo, ICSa, UAEH",
+    "bio": "Soy Doctor en Psicología Cognitiva y Experimental (2023) egresado en la Universidad Hertfordshire (UK),  Maestro en Ciencia del Comportamiento con orientación en Neurociencias (2016) y licenciado en Psicología (2013) egresado de la Universidad de Guadalajara.\nMi formación académica se desarrolló en el Laboratorio de Correlación Electroencefalográfica y Conducta en el Instituto de Neurociencias UDG, y durante el doctorado en laboratorio de Everyday Memory Research en la Universidad de Hertfordshire. He realizado estancias de investigación en la UNAM y en la Universidad de Madison Wisconsin.",
+    "img": "assets/m0.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dra. Paola Vanessa Olguín Rodríguez",
+    "aff": "Profesor-investigador de tiempo completo, Centro de Investigación en Ciencias-UAEM",
+    "bio": "Estudié la Licenciatura en Ciencias área Física en la UAEM, posteriormente realicé mis estudios de maestría en la UAEM desarrollando un proyecto de adquisición y análisis de datos EEG-simultáneos (hyperscanning) de dos personas durante el desarrollo de una tarea en conjunto. Obtuve el grado Doctor en Ciencias en el 2020 por el Instituto de Investigación en Ciencias Básica y Aplicadas-UAEM.  Realice estancias de investigación en la Universitat Pompeu Fabra-Barcelona financiado por la Fundación Carolinda del gobierno de España. Además, realicé dos estancias postdoctorales en el Instituto de Neurociencias-UdG financiado por SECIHIT y en el Instituto de Ciencias Nucleares-UNAM financiado por Dgapa.\nMis líneas de investigación se enfocan en el desarrollo de técnicas de análisis para entender el funcionamiento cerebral durante el neurodesarrollo, sueño en sujetos sanos y pacientes con deterioro cognitivo. Además, me interesa el estudio de redes fisiológicas donde se integra las señales electrofisiológicas cerebro-cuerpo.",
+    "img": "assets/m1.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Salvador Trejo García",
+    "aff": "Profesor e investigador, Facultad de Medicina y Psicología, Universidad Autónoma de Baja California (UABC), Tijuana, México.Responsable de Evaluación Colegiada.",
+    "bio": "Salvador Trejo García recibió el título de Licenciado en Psicología por la Universidad del Valle de México y el grado de Maestro y Doctor en Ciencias del Comportamiento (opción en Neurociencia) por el Instituto de Neurociencias de la Universidad de Guadalajara. Sus intereses iniciales se han centrado en la neuropsicología de los trastornos del neurodesarrollo.\nActualmente, se desempeña como profesor de tiempo completo en la Facultad de Medicina y Psicología de la Universidad Autónoma de Baja California (UABC), donde además coordina procesos de evaluación colegiada y el desarrollo de instrumentos de medición académica. Pertenece al Sistema Nacional de Investigadoras e Investigadores y cuenta con el reconocimiento de Perfil Deseable PRODEP.\nSu trabajo se enfoca en la integración de la psicometría, la neuropsicología y el análisis de procesos cognitivos, con especial énfasis en el desarrollo y validación de instrumentos, así como en la implementación de modelos de medición como CFA, ESEM, modelos bifactoriales y Teoría de Respuesta al Ítem (IRT). Asimismo, ha incorporado el uso de inteligencia artificial en la generación y evaluación de reactivos dentro de contextos educativos.\nDe manera complementaria, participa en proyectos de investigación relacionados con cognición social, funciones ejecutivas y variabilidad cognitiva en distintos contextos socioculturales.",
+    "img": "assets/m2.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dr. J. Daniel Arzate-Mena",
+    "aff": "Profesor-investigador de tiempo completo, Departamento de Inteligencia Artificial y Ciencias Computacionales - UAEM",
+    "bio": "Egresado de la Facultad de Ciencias de la UAEM, con especialidad en Física. Realizó su tesis de licenciatura en el Instituto de Ciencias Físicas de la UNAM en el área de Teoría de la Información con aplicación a textos en lenguaje natural. Obtuvo su grado de maestría en Ciencias con especialidad en Modelado Computacional y Cómputo Científico en aplicaciones a Neurociencias por la UAEM. Su proyecto doctoral se centró en el análisis de dinámica cerebral en registros multimodales de EEG-fMRI en colaboración con el Hospital Insel en Suiza-Berna.",
+    "img": "assets/m3.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Felipe Cabrera González",
+    "aff": "Profesor Investigador Tiempo Completo Universidad de Guadalajara, Centro Universitario de la Ciénega, en Centro de Investigación en Conducta y Cognición Comparada (Ocotlán, Jalisco)",
+    "bio": "",
+    "img": "assets/m4.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Bruno Lara Guzmán",
+    "aff": "Profesor-investigador de tiempo completo. Centro de investigacion en Ciencias (CInC). Universidad Autónoma del Estado de Morelos (UAEM).",
+    "bio": "Lleve a cabo estudios de doctorado en el King's College de la Universidad de Londres en el área de mecatrónica. Después hice un par de posdocs en Alemania, en la universidad Friedrich Schiller de Jena, y en el Instituto Max Planck de investigación en psicología, trabajando en temas principalmente de robótica evolutiva y robótica cognitiva. Desde el 2005 soy profesor investigador en el Centro de Investigación en Ciencias de la UAEM en donde desde el 2009 estoy a cargo del laboratorio de robótica cognitiva.",
+    "img": "assets/m5.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dra. Alejandra Ciria",
+    "aff": "Investigadora de tiempo completo, Departamento de Ciencias de la Computación, Instituto de Investigaciones en Matemáticas Aplicadas y en Sistemas, (IIMAS), Universidad Nacional Autónoma de México (UNAM).",
+    "bio": "Soy licenciada en Psicología por la Universidad de las Américas Puebla (UDLA-P), maestra en Ciencias Cognitivas por la Universidad Autónoma del Estado de Morelos (UAEM) y doctora en Psicología, en el área de Análisis Experimental de la Conducta, por la Universidad Nacional Autónoma de México (UNAM). Asimismo, realicé una estancia posdoctoral en el grupo de Sistemas Adaptativos del Institut für Informatik de la Humboldt-Universität zu Berlin. Esta posición fue financiada mediante una beca para investigadores jóvenes de la Fundación Alexander von Humboldt. Soy fellow del programa Diverse Intelligences Summer Institute (DISI). DISI es un programa riguroso de conferencias, seminarios y proyectos transdisciplinarios dedicado al estudio de los orígenes de la naturaleza, las diversas manifestaciones de la cognición y las inteligencias, fundado por la Templeton World Charity Foundation.",
+    "img": "assets/m6.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Pedro Manuel Cortes Esparza",
+    "aff": "Líder del Laboratory for Advanced Analytics and Decision Sciences (LADS) y del Behavioral Research and Public Opinion Lab, Escuela de Ciencias Sociales y Gobierno, Tecnológico de Monterrey",
+    "bio": "Soy investigador en ciencias de la conducta con especialización en neurociencia, interesado en comprender cómo los factores emocionales influyen en la toma de decisiones. Mi trabajo integra metodologías experimentales, herramientas neurofisiológicas e inteligencia artificial para estudiar la interacción entre emoción y cognición.\nActualmente, en el Tecnológico de Monterrey, lidero iniciativas de investigación que buscan conectar estos conocimientos con problemas sociales, desarrollando soluciones aplicadas —incluyendo herramientas tecnológicas y enfoques conductuales— orientadas a mejorar la toma de decisiones en poblaciones vulnerables y contextos complejos.",
+    "img": "assets/m7.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Jesús Emmanuel Arana Yepez",
+    "aff": "Profesor de asignatura B y Posdoctorante en el Instituto de Neurociencias de la Universidad de Guadalajara (UdeG) en el laboratorio de Farmacología y Conducta",
+    "bio": "Presento un doctorado por parte del Instituto de Neurociencias de la Universidad de Guadalajara y donde actualmente realizo mi estancia posdoctoral. Asimismo, he realizado estancias de investigación internacional en University of the Basque Country UPV/EHU, Faculty of Medicine and Nursing in Achucarro Basque Center For Neuroscience, Bilbao, España. Además, en el Instituto de fisiología, biología molecular y neurociencias (IFIBYNE) de la Universidad de Buenos Aires (UBA) y en el Neural Plasticity Lab and neurochemistry/neuropharmacology of the Institute of physiology, faculty of science in University of Valparaíso, Chile. Finalmente, busco desarrollar proyectos modulando la actividad de neurotransmisores (preferencialmente los monoaminérgicos) en el desarrollo de conductas adictivas y la interacción entre diferentes fármacos.",
+    "img": "assets/m8.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dr. Jonathan Gallego-Rudolf",
+    "aff": "Postdoctoral Researcher, Department of Biomedical Physiology and Kinesiology, Simon Fraser University, Burnaby, British Columbia, Canada.",
+    "bio": "Durante mi formación académica, obtuve la licenciatura en Psicología en la Facultad de Psicología de la Universidad Nacional Autónoma de México (UNAM; 2013–2017). Posteriormente, cursé la maestría en Neurobiología en el Instituto de Neurobiología de la UNAM, campus Juriquilla (2017–2019). Más adelante, completé el doctorado en Neurociencias en McGill University (Montreal, Canadá). Actualmente, realizo una estancia postdoctoral en Simon Fraser University (Burnaby, Canadá).\nMi línea de investigación se centra en el uso de múltiples modalidades de neuroimagen para estudiar los cambios en la actividad cerebral asociados con el envejecimiento y la enfermedad de Alzheimer, con un enfoque en la identificación de mecanismos tempranos y marcadores de progresión de la enfermedad.",
+    "img": "assets/m9.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dra. Sandra Lucia Quiñones Beltrán",
+    "aff": "Profesora-investigadora de tiempo completo, Facultad de Ciencias Administrativas y Sociales, UABC",
+    "bio": "Egresada de la Universidad Autónoma de Ciudad Juárez en la Licenciatura en Psicología. Obtuvo su grado de maestría en Neuropsicología en el Centro Universitario de Ciencias de la Salud de la Universidad de Guadalajara. Obtuvo su doctorado en Ciencia del Comportamiento con orientación en Neurociencias en el Instituto de Neurociencias de la Universidad de Guadalajara, donde desarrolló un proyecto de investigación utilizando Resonancia Magnética Funcional en una tarea de memoria de trabajo, enfocado en familiares de primer grado de pacientes con esquizofrenia.",
+    "img": "assets/m10.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Edgar Omar Herrera Hernández",
+    "aff": "Unidad de neurociencias nbt, COGNOS",
+    "bio": "Soy psicólogo y concluí el Doctorado en Ciencias del Comportamiento con orientación en Neurociencias en la Universidad de Guadalajara (2024). También cuento con una Maestría en Ciencia del Comportamiento con orientación en Neurociencias (2019), una especialidad en Promoción de la Salud y Prevención del Comportamiento Adictivo por la Universidad Nacional Autónoma de México (2014) y un Máster en Drogodependencias por la Universitat de Barcelona (2012). Además, tengo formación y acreditaciones en terapia cognitivo-conductual.\nMi formación académica y profesional se ha enfocado en las neurociencias cognitivas, la salud mental y las adicciones, particularmente en el estudio de los procesos cognitivos y la aplicación de herramientas neurocientíficas en contextos clínicos y de investigación. Actualmente soy profesor de asignatura en el área de Neurociencia de las Adicciones en la Facultad de Psicología y Terapia de la Comunicación Humana de la Universidad Juárez del Estado de Durango.\nEn el ámbito clínico, coordino la unidad de neurociencias nbt del centro COGNOS, en la que se realizan estudios de mapeo cerebral con qEEG, así como intervenciones con estimulación magnética transcraneal (TMS) y estimulación por corriente directa (tDCS).\nMi trabajo como investigador apenas comienza, ya que durante muchos años me dediqué principalmente a la práctica clínica. Sin embargo, mantengo un fuerte interés y compromiso por construir una carrera sólida en investigación, especialmente en el campo de la salud mental y las neurociencias aplicadas.",
+    "img": "assets/m11.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dr. Manuel Alejandro Mejía Ramírez",
+    "aff": "Profesor-Investigador, CETYS Universidad",
+    "bio": "Soy Doctor en Ciencias Médicas por la Universidad de Ciencias Médicas de La Habana (2025) por el trabajo de investigación realizado en el Centro de Neurociencias de Cuba (CNEURO) sobre las bases cerebrales del procesamiento de caras utilizando modelado computacional y experimental de datos de neuroimagen, de pupilometría, de redes neurales artificiales y conductuales de pacientes con prosopagnosia y personas neurotípicas. Mi formación básica es en licenciatura en psicología (UABC) y maestría en neuropsicología cognitiva (Universidad de Edimburgo).\nMi trabajo de investigación se ha desarrollado en tres líneas interrelacionadas. Mi línea de mayor interés es acerca de los mecanismos (conscientes e inconscientes) de la percepción de caras humanas y sus bases neurales. Para estudiar esto utilizamos una variedad de métodos que incluyen el diseño de experimentos cognitivos, manipulación de redes neurales artificiales, y análisis de pupilometría, resonancia magnética funcional y EEG, tanto en pacientes con lesiones cerebrales como neurotípicos. En la línea de validación psicométrica he trabajado en adaptaciones de escalas psicológicas, instrumentos de cognición social y baterías neuropsicológicas. Por último, en la línea de análisis de datos he trabajado con análisis transculturales y longitudinales en el envejecimiento cognitivo, y busco aplicar prácticas de ciencia abierta en todo mi trabajo, por ejemplo, publicando datos y código en repositorios públicos.",
+    "img": "assets/m12.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dr. Arturo Ron Grajales",
+    "aff": "Profesor de medio tiempo, CETYS Universidad, Campus internacional Ensenada",
+    "bio": "Soy licenciado en Psicología por la Universidad Marista de Guadalajara. Cursé los programas de Maestría y Doctorado en Ciencias del Comportamiento con orientación en Neurociencia en el Instituto de Neurociencias de la Universidad de Guadalajara. Mi trabajo de investigación se ha enfocado en los factores y procesos cerebrales que subyacen al comportamiento agresivo y violento, así como en el desarrollo de modelos de intervención orientados a su prevención.",
+    "img": "assets/m13.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dra. Cynthia Torres González",
+    "aff": "Profesora-investigadora de tiempo completo, FCASI, UABC",
+    "bio": "Mi nombre es Cynthia Torres González y soy profesora-investigadora de tiempo completo en la\nUniversidad Autónoma de Baja California, adscrita a la Facultad de Ciencias Administrativas,\nSociales e Ingeniería. Soy coordinadora de la Licenciatura en Psicología y co-dirijo el Laboratorio\nde Neurociencias y Cognición, donde desarrollo proyectos orientados al estudio de la relación entre\n\ncerebro, conducta y contexto social, con especial interés en neuropsicología aplicada. Soy\nLicenciada en Psicología por la Universidad de Guadalajara, Maestra en Diagnóstico y\nRehabilitación Neuropsicológica por la Benemérita Universidad Autónoma de Puebla. Doctorado\nen Psicología (Neurociencias del Comportamiento) por la Universidad Nacional Autónoma de\nMéxico. Este último lo realicé en la Unidad de Neurodesarrollo “Augusto Fernández Guardiola” del\nInstituto de Neurobiología, Campus Juriquilla.\n\nMi trabajo integra investigación, docencia, atención clínica y divulgación científica, buscando\ngenerar conocimiento con impacto social y aplicaciones prácticas en el ámbito de la salud mental y\nel bienestar cognitivo. He participado en el desarrollo de programas de intervención basados en\nmindfulness y regulación emocional, así como en proyectos enfocados en mujeres en contexto\nmigratorio, maternidad y salud mental perinatal.",
+    "img": null,
+    "status": "researcher"
+  },
+  {
+    "name": "Dr. Daniel Nikolaus Alvarez Núñez",
+    "aff": "Profesor-investigador de tiempo completo, CETYS Universidad",
+    "bio": "Soy Doctor en Ciencias del Comportamiento con orientación en Neurociencias por la Universidad de Guadalajara y Maestro en Diagnóstico y Rehabilitación Neuropsicológica por la Benemérita Universidad Autónoma de Puebla. Mi formación de base es en Psicología, disciplina que estudié en la Universidad Católica de Santa María (Arequipa, Perú).\nMi trayectoria académica se ha desarrollado tanto en el ámbito clínico como en el de investigación. En el área clínica, me formé en evaluación y rehabilitación neuropsicológica durante la Maestría, realizando prácticas en el Hospital Universitario de la Benemérita Universidad Autónoma de Puebla, donde enfoqué mi interés en el traumatismo craneoencefálico y la epilepsia. En el ámbito de investigación, mi trabajo se consolidó durante el doctorado en el Laboratorio de Estrés y Neurodesarrollo del Instituto de Neurociencias de la Universidad de Guadalajara.",
+    "img": "assets/m15.jpg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dr. Luis Ángel Llamas Alonso",
+    "aff": "Profesor-investigador, UABC",
+    "bio": "Doctor en Ciencia del Comportamiento con orientación en Neurociencias por la Universidad de Guadalajara. Responsable del Laboratorio de Psicofisiología Cognitiva y Afectiva en la UABC. Investiga procesos cognitivos y emocionales con EEG y seguimiento ocular, así como biomarcadores del uso de videojuegos en la infancia.",
+    "img": "assets/founder-luis.jpeg",
+    "status": "researcher"
+  },
+  {
+    "name": "Armando Q. Angulo Chavira",
+    "aff": "Facultad de Psicología, UNAM",
+    "bio": "Técnico académico de la Facultad de Psicología de la UNAM. Investiga la predicción lingüística, la adquisición del lenguaje y el bilingüismo mediante seguimiento ocular, EEG y análisis computacionales.",
+    "img": "assets/founder-armando.jpeg",
+    "status": "researcher"
+  },
+  {
+    "name": "Dr. Roberto Vladimir Huerta Chávez",
+    "aff": "Profesor-investigador, UAEH",
+    "bio": "Doctor en Ciencia del Comportamiento con orientación en Neurociencias por la Universidad de Guadalajara. Su investigación se centra en la interacción entre cognición y emoción, el control inhibitorio y la validación de estímulos afectivos mediante EEG y seguimiento ocular.",
+    "img": "assets/founder-vladimir.jpg",
+    "status": "researcher"
+  }
+]
