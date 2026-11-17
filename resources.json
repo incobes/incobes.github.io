@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "type": "instrument",
+    "title_es": "ANEW en español de México",
+    "title_en": "Mexican Spanish ANEW",
+    "description_es": "Explorador de normas afectivas para palabras en español de México, con opciones de búsqueda, consulta de fichas y descarga de datos.",
+    "description_en": "An explorer of affective norms for Mexican Spanish words, with search, record details, and data downloads.",
+    "url": "https://angulo-chavira.github.io/resource.html?id=anew-mx"
+  },
+  {
+    "type": "data",
+    "title_es": "Normas de completamiento de oraciones",
+    "title_en": "Sentence completion norms",
+    "description_es": "Explorador de contextos y respuestas de completamiento en español, con frecuencias, probabilidades y exportación de datos.",
+    "description_en": "An explorer of Spanish sentence contexts and completions, with frequencies, probabilities, and data export.",
+    "url": "https://angulo-chavira.github.io/resource.html?id=cloze-mx"
+  }
+]

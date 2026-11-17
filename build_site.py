@@ -1,34 +1,18 @@
 from pathlib import Path
-import json,html,re
+from urllib.parse import quote, urlsplit
+import json,html,os,re
 ROOT=Path(__file__).parent; OUT=ROOT/'docs'; members=json.loads((ROOT/'members.json').read_text())
+NETWORK_EMAIL='incobes@gmail.com'  # Dirección de contacto ya publicada en el sitio.
+PRIVATE_APP_URL=os.environ.get('INCOBES_PRIVATE_APP_URL','').strip()
+if PRIVATE_APP_URL:
+ private_url=urlsplit(PRIVATE_APP_URL)
+ if (private_url.scheme!='https' or not private_url.hostname or private_url.username or
+     private_url.password or private_url.query or private_url.fragment):
+  raise ValueError('INCOBES_PRIVATE_APP_URL debe ser una URL HTTPS de la aplicación privada, sin credenciales, consulta ni fragmento.')
 # Corrección editorial de una ficha con encabezado distinto en el documento original.
 members[4]['bio']='Soy licenciado en Psicología por el ITESO, maestro y doctor en Ciencias del Comportamiento por la Universidad de Guadalajara. Mi investigación experimental integra principios del análisis de la conducta con la psicología ecológica: elección, orientación y memoria espacial, affordances y variabilidad conductual. Soy responsable del Laboratorio de Sistemas Conductuales del Centro de Investigación en Conducta y Cognición Comparada.'
 institutions_short=['UAEH','UAEM','UABC','UAEM','UdeG','UAEM','UNAM','Tecnológico de Monterrey','UdeG','Simon Fraser University','UABC','COGNOS','CETYS Universidad','CETYS Universidad','UABC','CETYS Universidad','UABC','UNAM','UAEH']
 for m,short in zip(members,institutions_short):m['short_aff']=short
-eng=[
- 'Researcher in cognitive and experimental psychology. His interests include problematic gaming, involuntary cognitive processes, psychometrics, EEG and eye tracking.',
- 'Researcher with a background in physics and EEG hyperscanning. Her work connects quantitative methods with brain and behavioral sciences.',
- 'Researcher in cognitive and behavioral sciences. His work explores experimental approaches to cognition and behavior.',
- 'Researcher working across cognitive and behavioral sciences, with an interest in interdisciplinary collaboration.',
- 'Professor at the University of Guadalajara. His experimental research connects behavior analysis and ecological psychology, including choice, spatial orientation and affordances.',
- 'Researcher working in behavioral and cognitive sciences, with interests in experimental and interdisciplinary approaches.',
- 'Researcher at UNAM working in cognitive and behavioral sciences.',
- 'Researcher at Tecnológico de Monterrey studying emotion and decision making with experimental methods, neurophysiology and artificial intelligence.',
- 'Postdoctoral researcher at the University of Guadalajara. His research examines neurotransmitters, psychoactive substances and addiction-related behavior.',
- 'Postdoctoral researcher at Simon Fraser University. He uses multimodal neuroimaging to study brain aging and early Alzheimer’s disease.',
- 'Researcher at UABC with interests in neuropsychological assessment, cognitive stimulation, EEG and eye tracking.',
- 'Researcher in mental health and addictions with interests in neurophysiological biomarkers and noninvasive neuromodulation.',
- 'Researcher at CETYS studying face perception, neuroimaging, psychometrics and open science.',
- 'Researcher at CETYS studying aggression, early stress, neuropsychological intervention, sport and music in cognition.',
- 'Researcher at UABC working on neurocognitive development, maternal mental health and cognition in vulnerable contexts.',
- 'Researcher at CETYS studying early adversity, neuropsychological development, epilepsy, stress and sleep.',
- 'Professor-researcher at UABC working on cognitive and emotional processes through EEG and eye tracking, including biomarkers of gaming in childhood.',
- 'Academic technician at UNAM’s Faculty of Psychology. His research studies language prediction, acquisition and bilingualism with eye tracking, EEG and computational analyses.',
- 'Professor-researcher at UAEH studying cognition and emotion, inhibitory control and the validation of affective stimuli using EEG and eye tracking.'
-]
-# Contactos profesionales publicados en las fichas entregadas para la página.
-contacts=json.loads((ROOT/'public_contacts.json').read_text(encoding='utf-8'))
-for m,c in zip(members,contacts):m.update(c)
 navs={'es':[('about','La red'),('research','Investigación'),('people','Integrantes'),('events','Actividades'),('publications','Publicaciones'),('resources','Recursos'),('members','Miembros')], 'en':[('about','About'),('research','Research'),('people','People'),('events','Events'),('publications','Publications'),('resources','Resources'),('members','Members')]}
 def h(x):return html.escape(str(x),quote=True)
 def slugify(x):return re.sub(r'[^a-z0-9]+','-',x.lower()).strip('-')
@@ -113,6 +97,25 @@ def network_graph(lang):
 
 def network_jump(lang,label,extra_class):
  return f'<a class="network-jump {extra_class}" href="{lang}-institutions.html#conexiones"><span class="network-jump-icon" aria-hidden="true">{icon("nodes")}</span><span class="network-jump-label">{h(label)}</span><span class="network-jump-arrow" aria-hidden="true">↗</span></a>'
+
+def member_page(lang):
+ T=lambda es,en:tx(lang,es,en)
+ concepts=[
+  (T('Conectar','Connect'),T('Establecer vínculos con investigadores de diferentes disciplinas, instituciones y regiones del mundo, ampliando las posibilidades de intercambio académico.','Build connections with researchers across disciplines, institutions and regions of the world, expanding opportunities for academic exchange.')),
+  (T('Colaborar','Collaborate'),T('Compartir conocimientos, métodos, herramientas y recursos para desarrollar proyectos conjuntos o contribuir a investigaciones de otros integrantes.','Share knowledge, methods, tools and resources to develop joint projects or contribute to other members’ research.')),
+  (T('Contribuir','Contribute'),T('Participar en publicaciones científicas, formación de estudiantes, actividades académicas, divulgación y espacios de discusión científica.','Contribute to scientific publications, student training, academic activities, outreach and spaces for scientific discussion.'))
+ ]
+ concept_html=''.join(f'<article class="member-concept reveal"><span class="member-concept-number">{i:02d}</span><h2>{h(title)}</h2><p>{h(description)}</p></article>' for i,(title,description) in enumerate(concepts,1))
+ subject=T('Solicitud de incorporación a INCOBES','Request to join INCOBES')
+ body=T('Hola, me interesa integrarme a INCOBES. Comparto mis datos para iniciar una conversación:\n\nNombre completo:\nInstitución y país:\nÁrea o intereses de investigación:\nPosibles formas de colaboración:\nEnlace a perfil académico (opcional):',
+        'Hello, I am interested in joining INCOBES. I am sharing my details to start a conversation:\n\nFull name:\nInstitution and country:\nResearch area or interests:\nPossible ways to collaborate:\nLink to academic profile (optional):')
+ request_url=f'mailto:{NETWORK_EMAIL}?subject={quote(subject,safe="")}&body={quote(body,safe="")}'
+ if PRIVATE_APP_URL:
+  access_action=f'<a class="btn member-private-button" href="{h(PRIVATE_APP_URL)}">{T("Acceder al espacio de miembros","Enter the member space")} <span aria-hidden="true">↗</span></a>'
+ else:
+  access_action=f'<button class="btn member-private-button" type="button" disabled aria-describedby="private-access-note">{T("Acceder al espacio de miembros","Enter the member space")} <span aria-hidden="true">↗</span></button><p class="member-action-note" id="private-access-note">{T("El enlace de ingreso aún no está habilitado.","The sign-in link is not yet enabled.")}</p>'
+ page_intro=f'''<section class="page-hero compact on-dark member-intro" aria-labelledby="member-intro-title"><div class="container"><div class="eyebrow">{T('INCOBES / MIEMBROS','INCOBES / MEMBERS')}</div><h1 id="member-intro-title">{T('La colaboración comienza compartiendo lo que sabemos.','Collaboration begins by sharing what we know.')}</h1><p class="lead">{T('Formar parte de INCOBES significa conectar con investigadores de diferentes disciplinas, compartir conocimientos y construir colaboraciones.','Being part of INCOBES means connecting with researchers across disciplines, sharing knowledge and building collaborations.')}</p><div class="member-concepts" aria-label="{T('Formas de participar','Ways to participate')}">{concept_html}</div></div></section>'''
+ return page_intro+f'''<section class="member-section" aria-label="{T('Incorporación y acceso','Joining and access')}"><div class="container"><div class="member-actions"><article class="member-action" aria-labelledby="member-join-title"><div class="eyebrow">{T('INCORPORACIÓN','JOIN THE NETWORK')}</div><h2 id="member-join-title">{T('¿Te gustaría integrarte a INCOBES?','Would you like to join INCOBES?')}</h2><p>{T('Estamos abiertos a conocer investigadores de distintas disciplinas interesados en compartir conocimientos y explorar oportunidades de colaboración.','We welcome conversations with researchers from different disciplines who want to share knowledge and explore opportunities to work together.')}</p><p>{T('Si te interesa participar, cuéntanos brevemente quién eres, qué investigas y cómo te gustaría contribuir a la red. La incorporación se acuerda después de conversar sobre posibles colaboraciones.','If you are interested, tell us briefly who you are, what you study and how you would like to contribute. Joining is agreed upon after a conversation about possible collaborations.')}</p><a class="btn member-request-button" href="{h(request_url)}">{T('Solicitar incorporación','Request to join')} <span aria-hidden="true">↗</span></a></article><article class="member-action member-action-private" aria-labelledby="member-private-title"><div class="eyebrow">{T('PARA INTEGRANTES','FOR MEMBERS')}</div><h2 id="member-private-title">{T('Espacio de miembros','Member space')}</h2><p>{T('Accede al entorno privado de INCOBES para consultar propuestas de investigación, compartir recursos y colaborar con otros integrantes de la red.','Access INCOBES’s private space to explore research proposals, share resources and collaborate with other members of the network.')}</p>{access_action}</article></div></div></section>'''
 
 # The circular artwork on Inicio is the existing decorative network_svg() and
 # emblem-art. It represents the idea of connection, not verified relationships.
@@ -208,18 +211,13 @@ for lang in ('es','en'):
   directory=top(lang,T('INCOBES / INTEGRANTES','INCOBES / PEOPLE'),T('Integrantes','People'))+f'<section class="section"><div class="container">{tabs}{directory_link}<div class="search-row"><div><div class="eyebrow">{T("01 / DIRECTORIO","01 / DIRECTORY")}</div><h2 class="directory-title">{directory_title}</h2><p class="count-label"><span id="people-count">{len(cohort)}</span> {T("perfiles","profiles")}</p></div><label><span class="sr-only">{T("Buscar integrantes","Search members")}</span><input id="people-search" type="search" placeholder="{T("Buscar por nombre o institución","Search name or institution")}" aria-label="{T("Buscar integrantes","Search members")}"></label></div><div class="people-grid">{cards}</div>{empty}</div></section>'
   page(lang,directory_key,T('Integrantes','People'),directory)
  for i,m in enumerate(members):
-  bio=m['bio'] if lang=='es' else eng[i]
+  bio=m['bio'] if lang=='es' else m.get('bio_en','')
   photo=f'<img src="{m["img"]}" alt="{h(m["name"])}">' if m['img'] else '<div class="placeholder">✣</div>'
-  link_defs=[('orcid','ORCID','orcid.png'),('scholar','Google Scholar','scholar.png'),('researchgate','ResearchGate','researchgate.png')]
-  links=''.join(f'<a class="academic-link" href="{h(m[key])}" target="_blank" rel="noopener noreferrer" aria-label="{label}" title="{label}"><img src="assets/{img}" alt=""><span>{label}</span></a>' for key,label,img in link_defs if m.get(key))
-  if m.get('github'):
-   links+=f'<a class="academic-link" href="{h(m["github"])}" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><span class="academic-monogram" aria-hidden="true">GH</span><span>GitHub</span></a>'
-  # Professional email is supplied for the webpage. Phone numbers belong only in the future private directory.
-  mail=f'<span class="email-copy-wrap"><button type="button" class="academic-link email-copy" data-copy-email="{h(m["email"])}" aria-label="{T("Copiar correo de","Copy email for")} {h(m["name"])}">{mail_icon()}</button><span class="copy-tooltip" role="status" aria-live="polite" aria-atomic="true"></span></span>' if m['email'] else ''
   back_page='students' if m['status']=='student' else 'people'
   status_label=T('ESTUDIANTE','STUDENT') if m['status']=='student' else T('INVESTIGADOR/A','RESEARCHER')
   aff=T('Unidad de neurociencias nbt, COGNOS','nbt Neuroscience Unit, COGNOS') if m['name']=='Edgar Omar Herrera Hernández' else m['aff']
-  profile=top(lang,T('INCOBES / INTEGRANTES','INCOBES / PEOPLE'),h(m['name']),h(aff))+f'<section class="section"><div class="container profile"><div class="profile-image reveal">{photo}</div><div class="reveal"><a class="back-link" href="{lang}-{back_page}.html">← {T("Todos los integrantes","All members")}</a><div class="eyebrow">{T("PERFIL","PROFILE")} · {status_label}</div><h2>{T("Semblanza","Biography")}</h2><p class="bio">{h(bio) if bio else T("Semblanza en preparación.","Biography in preparation.")}</p><div class="academic-links">{links}{mail}</div></div></div></section>'
+  network_cta=f'<div class="catalog-contribute"><div><h3>{T("¿Te interesa colaborar con INCOBES?","Interested in collaborating with INCOBES?")}</h3><p>{T("Conoce las formas de integrarte y conversemos desde la red.","Explore ways to join and start a conversation through the network.")}</p></div>{btn(f"{lang}-members.html",T("Conoce cómo integrarte","Learn how to join"))}</div>'
+  profile=top(lang,T('INCOBES / INTEGRANTES','INCOBES / PEOPLE'),h(m['name']),h(aff))+f'<section class="section"><div class="container profile"><div class="profile-image reveal">{photo}</div><div class="reveal"><a class="back-link" href="{lang}-{back_page}.html">← {T("Todos los integrantes","All members")}</a><div class="eyebrow">{T("PERFIL","PROFILE")} · {status_label}</div><h2>{T("Semblanza","Biography")}</h2><p class="bio">{h(bio) if bio else T("Semblanza en preparación.","Biography in preparation.")}</p>{network_cta}</div></div></section>'
   page(lang,f'person-{i}',m['name'],profile)
  events_data=json.loads((ROOT/'events.json').read_text(encoding='utf-8'))
  upcoming=[e for e in events_data if e.get('status')=='upcoming']
@@ -270,9 +268,7 @@ for lang in ('es','en'):
  institutions_html+=f'<section class="section institution-directory" id="directorio"><div class="container">{heading(lang,T("02 / DIRECTORIO","02 / DIRECTORY"),T("Directorio de instituciones","Institution directory"))}<div class="institution-grid">{"".join(institution_cards)}</div></div></section>'
  page(lang,'institutions',T('Instituciones','Institutions'),institutions_html)
  page(lang,'resources',T('Recursos','Resources'),resources)
- private=top(lang,T('INCOBES / MIEMBROS','INCOBES / MEMBERS'),T('Acceso de integrantes','Member access'))+f'<section class="section"><div class="container member-gateway"><div><div class="eyebrow">01 / {T("COMUNIDAD","COMMUNITY")}</div><h2>{T("Un espacio para colaborar","A space to collaborate")}</h2><div class="gateway-list"><div>{icon("spark")}<span>{T("Propuestas de investigación","Research proposals")}</span></div><div>{icon("lab")}<span>{T("Equipos, técnicas y acceso a poblaciones","Equipment, methods and participant access")}</span></div><div>{icon("nodes")}<span>{T("Contacto directo entre integrantes","Direct contact between members")}</span></div></div></div><div class="access-card"><div class="access-symbol">{icon("nodes")}</div><span class="status-pill">{T("Solo para integrantes autorizados","Authorized members only")}</span><h3>{T("Ingresa a tu cuenta","Sign in to your account")}</h3><a class="btn" href="https://incobes-members.incobes.workers.dev/" target="_blank" rel="noopener noreferrer">{T("Acceder al espacio","Access member space")} ↗</a><div class="access-divider"></div><p>{T("¿Quieres integrarte a la red?","Would you like to join the network?")}</p><a class="access-join" href="{lang}-join.html">{T("Conoce los requisitos","See the requirements")} ↗</a></div></div></section>'
- join=top(lang,T('INCOBES / INTEGRARSE','INCOBES / JOIN'),T('Integrarse a la red','Join the network'))+f'<section class="section"><div class="container"><nav class="section-tabs" aria-label="{T("Secciones de miembros","Member sections")}"><a href="{lang}-members.html">{T("Colaboración interna","Internal collaboration")}</a><a class="selected" href="{lang}-join.html">{T("Integrarse a la red","Join the network")}</a></nav><div class="text-grid join-grid"><div><div class="eyebrow">01 / {T("POSTULACIÓN","APPLICATION")}</div><h2>{T("Tu interés es el punto de partida.","Start with your interests.")}</h2><p class="lead">{T("Investigadores y estudiantes pueden integrarse a la colaboración interdisciplinaria en cognición, conducta y neurociencias.","Researchers and students can join interdisciplinary work across cognition, behavior and neuroscience.")}</p><div class="join-steps"><div><b>01</b><p>{T("Prepara una carta de intención breve con tus intereses y motivos para integrarte.","Prepare a short letter of intent describing your interests and reasons for joining.")}</p></div><div><b>02</b><p>{T("Incluye tu nombre, institución o programa de estudios, intereses y una síntesis de tu trayectoria académica.","Include your name, institution or degree program, interests and a short academic background.")}</p></div><div><b>03</b><p>{T("Envía la carta y tu información académica al correo de la red.","Email the letter and academic information to the network.")}</p></div></div></div><div class="join-panel"><div class="icon">{icon("book")}</div><h3>{T("Enviar solicitud","Send an application")}</h3><p>{T("Adjunta la carta de intención y un CV o síntesis académica.","Attach your letter of intent and a CV or academic summary.")}</p>{btn("mailto:incobes@gmail.com?subject="+T("Solicitud%20de%20integraci%C3%B3n%20a%20INCOBES","INCOBES%20membership%20application"),T("Escribir al correo de la red","Email the network"))}<p class="join-email">incobes@gmail.com</p></div></div></div></section>'
- page(lang,'join',T('Integrarse','Join'),join)
- page(lang,'members',T('Miembros','Members'),private)
+ page(lang,'members',T('Miembros','Members'),member_page(lang))
+ (OUT/f'{lang}-join.html').unlink(missing_ok=True)
 (OUT/'index.html').write_text('<!doctype html><html lang="es"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=es-index.html"><title>INCOBES</title><a href="es-index.html">Español</a> / <a href="en-index.html">English</a></html>')
 print('Wrote',len(list(OUT.glob('*.html'))),'pages')
